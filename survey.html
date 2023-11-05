@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FortuneKookie</title>
+    <link rel="stylesheet" href="survey.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="container">
+            <a class="logo" href="#">Fortune<span>Kookie</span></a>
+
+            <img id="mobile-cta" class="mobile-menu" src="images 2/menu.svg" alt="menulogo">
+
+            <nav>
+                <img id="mobile-exit" class="mobile-menu-exit" src="images 2/exit.svg" alt="exit">
+                <ul class="primary-nav">
+                    <li class="current"><a href="index.html" style="color: #99522B;">Home</a></li>
+                    <li><a href="timer.html" style="color:#99522B">Pomodoro</a></li>
+                    <li><a href="cookieclicker.html" style="color:#99522B">Mini Games</a></li>
+                </ul>
+                <ul class="secondary-nav">
+                    <li class="moodcheck-cta"><a href="survey.html">MoodCheck!</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</head>
+<body>
+
+   
+    <h3>How would you rate your current feeling level?</h3>
+    <label>
+        
+        <h2>Frustrated <input type="range" min="0" max="100" value="50" class="slider" id="feelingSlider"> Great</h2>
+        
+    </label>
+
+    
+    <h3><br>How confident are you about managing your academic workload?</h3>
+    <label>
+        <h2>Low <input type="range" min="0" max="100" value="50" class="slider" id="confidenceSlider"> High</h2>
+        
+    </label>
+
+    
+    <h3><br>Select specific challenges or concerns affecting your well-being:</h3>
+    <label>
+        <input type="checkbox" id="academicPressureCheckbox"><h2>Academic Pressure</h2>
+    </label>
+
+    <label>
+        <input type="checkbox" id="personalRelationshipsCheckbox"> <h2>Personal Relationships</h2>
+    </label>
+
+    <label>
+        <input type="checkbox" id="timeManagementCheckbox"> <h2>Time Management</h2>
+    </label>
+
+    <label>
+        <input type="checkbox" id="healthandsafetyCheckbox"> <h2>Health and Safety</h2>
+    </label>
+
+    
+    <button onclick="calculateResults()">Submit</button>
+
+    
+    <div id="results"></div>
+
+    <script>
+        function calculateResults() {
+            const feelingLevel = document.getElementById('feelingSlider').value;
+            const confidenceLevel = document.getElementById('confidenceSlider').value;
+
+            const academicPressure = document.getElementById('academicPressureCheckbox').checked;
+            const personalRelationships = document.getElementById('personalRelationshipsCheckbox').checked;
+            const timeManagement = document.getElementById('timeManagementCheckbox').checked;
+            const healthandsafety = document.getElementById('healthandsafetyCheckbox').checked;
+
+            
+            let advice = '';
+
+            if (feelingLevel <= 33) {
+                if (confidenceLevel <= 33) {
+                advice += 'Start small. Break tasks into manageable steps and celebrate each achievement. Seek support from peers, mentors, or counseling services. Focus on self-care activities to boost mood.';
+            } else if (confidenceLevel <= 67) {
+                advice += 'Recognize your emotions without judgment. Set realistic goals and prioritize self-care. Engage in activities that bring joy and relaxation. Consider seeking guidance from a mentor or counselor to address confidence concerns.';
+            } else {
+                advice += 'Reflect on the factors contributing to your low mood. While maintaining confidence, allow yourself to acknowledge and address emotions. Consider setting aside time for activities that bring emotional well-being. Seek support if needed.';
+            }
+            } else if (feelingLevel <= 67) {
+                if (confidenceLevel <= 33) {
+                advice += 'Embrace a growth mindset. Set small, achievable goals to build confidence gradually. Seek feedback and acknowledge your progress. Engage in activities that bring fulfillment and consider reaching out to a mentor or counselor for support.';
+            } else if (confidenceLevel <= 67) {
+                advice += 'Maintain balance. Continue your current routine while incorporating opportunities for personal growth. Regularly check in with your emotions and confidence levels. Seek support or advice when faced with challenges.';
+            } else {
+                advice += 'Continue your proactive approach. Set challenging yet attainable goals. Use your confidence to explore new opportunities for personal and academic growth. Remember to check in with your emotional well-being and seek support if needed.';
+            }
+            } else {
+                if (confidenceLevel <= 33) {
+                advice += 'Acknowledge and embrace your positive emotions. Challenge negative self-talk and focus on your strengths. Gradually step outside your comfort zone, seeking support when needed. Celebrate achievements to boost confidence.';
+            } else if (confidenceLevel <= 67) {
+                advice += 'Leverage your positive emotions to explore new challenges. Set ambitious yet realistic goals. Acknowledge your accomplishments to build confidence. Regularly assess your emotional well-being and make adjustments as needed.';
+            } else {
+                advice += 'Celebrate your positive emotional state and confidence. Channel your energy into meaningful projects. Continue setting and achieving ambitious goals. Prioritize self-care to maintain a healthy balance. Share your positive experiences with others.';
+            }
+            }
+
+            if (academicPressure) {
+                advice += 'Academic Pressure: : Embrace a growth mindset. View challenges as opportunities for learning and growth rather than stressors. Break down tasks into smaller, manageable steps. Seek academic support resources, such as study groups or workshops, to enhance your skills and confidence.';
+                
+            }
+
+            if (personalRelationships) {
+                advice += 'Personal Relationships: Foster open communication in your relationships. Actively listen to others, express your thoughts, and resolve conflicts constructively. Prioritize quality time with loved ones. Set healthy boundaries to maintain balance between your personal and academic life.';
+            }
+
+            if (timeManagement) {
+                advice += 'Time Management: Develop a personalized time management strategy. Identify your priorities and allocate time accordingly. Utilize productivity tools and techniques to organize tasks. Regularly reassess and adjust your schedule to maintain a healthy balance between academic and personal commitments.';
+            }
+
+            if (healthandsafety) {
+                advice += 'Health and Safety: : Prioritize your well-being. Establish consistent self-care habits, including sufficient sleep, regular exercise, and a balanced diet. Stay informed about health and safety practices. Seek professional help when needed, and encourage a culture of well-being in your community.';
+            }
+            window.alert(document.getElementById('results').innerHTML = 'Advice: ' + advice);
+        }
+    </script>
+    <script>
+
+        const mobileBtn = document.getElementById('mobile-cta')
+             nav = document.querySelector('nav')
+            mobileBtnExit = document.getElementById('mobile-exit')
+
+        mobileBtn.addEventListener('click', () => {
+            nav.classList.add('menu-btn');
+    })
+
+        mobileBtnExit.addEventListener('click', () => {
+        nav.classList.remove('menu-btn');
+})
+    </script>
+</body>
+</html>

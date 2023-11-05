@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Kooky Clicker</title>
+  <link href="cookie.css" rel="stylesheet" type="text/css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+
+</head>
+<body class="container">
+  
+    
+      <h1 class="header">Kooky Clicker<br>Stress Reliefer!</h1>
+    <p id="instructions">Congrats! You made it through your study session!! Break these fortune cookies and release all your pent-up tension, read your fortune, and get right to your next study session nice and fresh! The best is yet to crumb! </p>
+      <div class="quote-box">
+        <blockquote id="quote">Unlock at 200 Kookies - Click Here to Read Your Fortune!</blockquote>
+        <span></span>
+      </div>
+           <div id="score" class="score"><p id="cookieCounter"> Cookies Earned = 0</p>
+           </div>
+          <div class="cookie-container">
+            <img id="cookie" class="cookie" src="images/closed_cookie_1.svg">
+            
+          </div>
+          <div class="powerups">
+            <div class="powerup" id="auto-click">
+              <div class="name">Auto Click</div>
+              <div class="price">Price: <span>100</span> cookies</div>
+              
+            </div>
+            <div class="powerup" id="upgrade-click">
+              <div class="name">Upgrade Click</div>
+              <div class="price">Price: <span>50</span> cookies</div>
+            </div>
+            <button class="powerup" id="studying-click">
+              <div class="name">Go Back to Studying</div>
+              <div class="price">Price: <span>500</span> cookies</div>
+            </button>
+            </div>
+          </div>
+  <div class="cookie-clicks"></div>
+    
+  
+</body>
+<script src="game.js"> </script>
+</html>
