@@ -12,7 +12,7 @@ function updateScore() {
 
 cookie.addEventListener('click', () => {
   if (upgradeClickActive) {
-    cookies += 50; 
+    cookies += 10; 
   } else {
     cookies++; 
   }
