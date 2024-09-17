@@ -3,7 +3,7 @@ This is the result of UB Hacking Fall 2023, Hack-a-thon held at University at Bu
 This website is Concentration and Mental Focus Aid for Students which has a concentration timer, personalized survey, and mini game during the break time
 
 # How to use
-After downloading the zip file, please unzip it and click on "index.html" to see the website UX
+After downloading the zip file, please unzip it and click on "index.html" to see the website UI/UX
 
 # Inspiration
 
